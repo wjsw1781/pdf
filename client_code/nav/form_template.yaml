@@ -1,35 +1,29 @@
 components:
-- layout_properties: {slot: title}
-  name: label_1
-  properties: {text: 江油热}
-  type: Label
 - components:
-  - layout_properties: {grid_position: 'CWNYJL,YIVRWU'}
-    name: button_1
-    properties:
-      text: |
-        履歴書を修正
-    type: Button
-  - layout_properties: {grid_position: ''}
-    name: button_4
+  - event_bindings: {click: link_1_click}
+    layout_properties: {full_width_row: true, grid_position: 'NJNWLL,QDATBV'}
+    name: link_1
+    properties: {text: 履歴書を修正}
+    type: Link
+  - event_bindings: {click: link_2_click}
+    layout_properties: {full_width_row: true, grid_position: 'HTGDKZ,OVQJHS'}
+    name: link_2
     properties: {text: 役職}
-    type: Button
-  - layout_properties: {grid_position: ''}
-    name: button_2
+    type: Link
+  - event_bindings: {click: link_2_copy_2_click}
+    layout_properties: {full_width_row: true, grid_position: 'QEEGWK,PMNXZU'}
+    name: link_2_copy_2
     properties: {text: 現役人氣}
-    type: Button
-  - layout_properties: {grid_position: 'TXMCAD,LAXUZB'}
-    name: button_3
-    properties:
-      text: |
-        私
-    type: Button
-  layout_properties: {slot: left-nav}
-  name: column_panel_1
+    type: Link
+  - event_bindings: {click: link_2_copy_click}
+    layout_properties: {full_width_row: true, grid_position: 'DPRZYP,EJSLZP'}
+    name: link_2_copy
+    properties: {text: 私の}
+    type: Link
+  layout_properties: {grid_position: 'ESCXAN,TXQMDK'}
+  name: column_panel_2
   properties: {}
   type: ColumnPanel
-container:
-  properties: {html: '@theme:standard-page.html', visible: true}
-  type: HtmlTemplate
+container: {type: ColumnPanel}
 custom_component: true
 is_package: true
