@@ -13,15 +13,34 @@ components:
       name: create_time
       properties: {text: ''}
       type: Label
-    - layout_properties: {grid_position: 'IPUPVC,NLGTNJ'}
+    - layout_properties: {grid_position: 'QYKHYS,KVHZMW'}
       name: content
       properties: {}
-      type: RichText
+      type: TextArea
     layout_properties: {full_width_row: true, grid_position: 'CJSITQ,BTKGAR'}
     name: outlined_card_1
     properties: {role: outlined-card}
     type: ColumnPanel
-  - layout_properties: {full_width_row: true, grid_position: 'PAUELS,QKJWKW'}
+  - components:
+    - layout_properties: {grid_position: 'RSDZDO,RMDSFU'}
+      name: ta_top
+      properties: {}
+      type: TextArea
+    - event_bindings: {click: btn_top_click}
+      layout_properties: {grid_position: 'RSDZDO,JPCFPR'}
+      name: btn_top
+      properties: {align: center, text: 评论}
+      type: Button
+    layout_properties: {full_width_row: true, grid_position: 'PAUELS,QKJWKW'}
+    name: comment_posts
+    properties: {role: outlined-card}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'UFXSEL,OUAIVL'}
+      name: rp_top
+      properties: {item_template: post_row}
+      type: RepeatingPanel
+    layout_properties: {full_width_row: true, grid_position: 'UYLONB,MDIRNO'}
     name: outlined_card_2
     properties: {role: outlined-card}
     type: ColumnPanel

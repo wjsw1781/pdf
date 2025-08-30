@@ -1,0 +1,8 @@
+components:
+- event_bindings: {click: button_1_click}
+  layout_properties: {column: TRXIGF}
+  name: button_1
+  properties: {text: 查看}
+  type: Button
+container: {type: DataRowPanel}
+is_package: true
