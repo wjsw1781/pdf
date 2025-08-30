@@ -25,11 +25,4 @@ class nav(navTemplate):
         b64 = base64.b64encode(file.get_bytes()).decode("ascii")
         data_url = f"data:application/pdf;base64,{b64}"
     
-        # 2. 生成 <iframe> 代码
-        iframe_html = (
-            f'<iframe src="{data_url}" '
-            f'width="100%" height="700px" style="border:none;"></iframe>'
-        )
-    
-        # 3. 填进 RichText 组件
-        self.pdf_viewer.content = iframe_html     
+        self.iframe_1.url = data_url
