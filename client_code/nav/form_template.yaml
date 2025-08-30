@@ -5,11 +5,7 @@ components:
     name: file_loader_1
     properties: {text: 上传pdf}
     type: FileLoader
-  - components:
-    - layout_properties: {grid_position: 'KGCVPS,RIYJJW'}
-      name: iframe_1
-      properties: {}
-      type: form:IFrame
+  - components: []
     layout_properties: {grid_position: 'CKXWGG,HQDOWS'}
     name: outlined_card_1
     properties: {role: outlined-card}

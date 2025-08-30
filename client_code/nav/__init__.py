@@ -2,6 +2,7 @@ from ._anvil_designer import navTemplate
 from anvil import *
 import anvil
 import base64
+import re
 
 class nav(navTemplate):
     def __init__(self, **properties):
@@ -9,20 +10,24 @@ class nav(navTemplate):
         self.init_components(**properties)
 
         # Any code you write here will run before the form opens.
-
-    
-    # 选完文件以后会自动触发此事件
     def file_loader_1_change(self, file, **event_args):
-        if file is None:                 # 用户点取消
-            return
+        try:
+            if file is None or file.content_type != 'application/pdf':
+                raise ValueError("请上传 pdf 文件")
+                
+            data     = file.get_bytes()
+            size_kb  = len(data) / 1024
+            first_ln = data.split(b'\n', 1)[0].decode('latin1', errors='ignore')
     
-        # 简单做个类型校验（可选）
-        if file.content_type != 'application/pdf':
-            alert("请上传 pdf 文件")        # 也可以做更完善的判断
-            return
+            # 把元信息等展示在 outlined_card_1 中
+            self.outlined_card_1.clear()
+            self.outlined_card_1.add_component(Label(text=f"文件名：{file.name}"))
+            self.outlined_card_1.add_component(Label(text=f"文件大小：{size_kb:.1f} KB"))
+            self.outlined_card_1.add_component(Label(text=f"PDF 版本号：{first_ln}"))
+    
 
-        # 1. 把 Media 对象转成 data URL（base64）
-        b64 = base64.b64encode(file.get_bytes()).decode("ascii")
-        data_url = f"data:application/pdf;base64,{b64}"
-    
-        self.iframe_1.url = data_url
+            result_msg = anvil.server.call('save_pdf', file.name, data)
+
+        except Exception as e:
+            alert(str(e))
+        self.file_loader_1.clear()
