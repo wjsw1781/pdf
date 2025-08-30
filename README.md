@@ -88,15 +88,3 @@ The Anvil reference documentation provides comprehensive information on how to u
 If you want to get to the basics as quickly as possible, each section of this documentation features a [Quick-Start Guide](https://anvil.works/docs/overview/quickstarts?utm_source=github:app_README).
 
 
-
-nohup anvil-app-server --app . --ip 0.0.0.0 --port 3030 >/dev/null 2>&1 &
-
-ps aux | grep anvil-app-server 
-ps aux | grep anvil-app-server | awk '{print $2}' | xargs kill -9
-
-
-101.132.61.226:3030
-
-curl 101.132.61.226:3030
-
-
