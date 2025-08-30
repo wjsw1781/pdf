@@ -86,3 +86,11 @@ Anvil has tutorials on:
 The Anvil reference documentation provides comprehensive information on how to use Anvil to build web applications. You can find the documentation [here](https://anvil.works/docs/overview?utm_source=github:app_README).
 
 If you want to get to the basics as quickly as possible, each section of this documentation features a [Quick-Start Guide](https://anvil.works/docs/overview/quickstarts?utm_source=github:app_README).
+
+
+
+nohup anvil-app-server --app . --ip 0.0.0.0 --port 3030 >/dev/null 2>&1 &
+
+101.132.61.226:3030
+
+
