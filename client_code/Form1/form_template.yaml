@@ -1,0 +1,7 @@
+components:
+- layout_properties: {grid_position: 'QOQTGM,XEBDSB'}
+  name: nav_1
+  properties: {}
+  type: form:nav
+container: {type: ColumnPanel}
+is_package: true
