@@ -1,7 +1,8 @@
 components:
-- layout_properties: {column: YATMPX}
-  name: button_1
-  properties: {text: 删除}
+- event_bindings: {click: button_2_click}
+  layout_properties: {column: FMNMDO}
+  name: button_2
+  properties: {text: 显示}
   type: Button
 container: {type: DataRowPanel}
 is_package: true
