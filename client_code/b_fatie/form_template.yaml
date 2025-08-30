@@ -1,31 +1,43 @@
 components:
 - components:
   - components:
-    - layout_properties: {grid_position: 'LEDEVJ,BJKNVQ'}
-      name: label_1
-      properties: {background: 'theme:On Primary Container', foreground: 'theme:On Primary', text: 标题}
-      type: Label
-    - layout_properties: {grid_position: 'LEDEVJ,ORQDWS'}
-      name: text_box_2
+    - layout_properties: {full_width_row: true, grid_position: 'LEDEVJ,ORQDWS'}
+      name: title_tb
       properties: {}
       type: TextBox
-    - layout_properties: {grid_position: 'ANPPJT,JWWHBW'}
-      name: label_2
-      properties: {background: 'theme:On Primary Container', foreground: 'theme:On Primary', text: 正文}
-      type: Label
-    - layout_properties: {grid_position: 'ANPPJT,VWPOHU'}
-      name: rich_text_1
-      properties: {background: 'theme:Secondary Container'}
-      type: RichText
-    - layout_properties: {grid_position: 'YCVMLI,TRJUJY'}
-      name: button_1
+    - components:
+      - layout_properties: {width: 1115.3125, x: 0.953125, y: 0}
+        name: content_rt
+        properties: {height: 248.41015625}
+        type: TextArea
+      layout_properties: {full_width_row: true, grid_position: 'ANPPJT,KWVURK'}
+      name: xy_panel_1
+      properties: {height: 243.16015625}
+      type: XYPanel
+    - event_bindings: {click: submit_article_click}
+      layout_properties: {grid_position: 'YCVMLI,TRJUJY'}
+      name: submit_article
       properties: {text: 发表}
       type: Button
     layout_properties: {full_width_row: true, grid_position: 'FTRABL,GHSOTG'}
     name: outlined_card_1
     properties: {role: outlined-card}
     type: ColumnPanel
-  - layout_properties: {full_width_row: true, grid_position: 'XZDBFF,UVEYJY'}
+  - components:
+    - components:
+      - name: repeating_panel_1
+        properties: {item_template: b_fatie.RowTemplate4}
+        type: RepeatingPanel
+      layout_properties: {full_width_row: true, grid_position: 'CYQSVR,SVKWIZ'}
+      name: data_grid_1
+      properties:
+        columns:
+        - {data_key: user, id: RRDVSY, title: user}
+        - {data_key: title, id: KWKMFU, title: title}
+        - {data_key: create_time, id: PHOJSW, title: create_time}
+        - {data_key: column_1, id: YATMPX, title: 删除}
+      type: DataGrid
+    layout_properties: {full_width_row: true, grid_position: 'XZDBFF,UVEYJY'}
     name: outlined_card_2
     properties: {role: outlined-card}
     type: ColumnPanel

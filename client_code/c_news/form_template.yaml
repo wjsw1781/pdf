@@ -1,12 +1,28 @@
 components:
 - components:
   - components:
-    - layout_properties: {grid_position: 'AIBUHW,ARSNVC'}
-      name: label_1
-      properties: {align: center, text: hot}
+    - layout_properties: {grid_position: 'WGHSTV,ZAGWXQ'}
+      name: title
+      properties: {}
       type: Label
+    - layout_properties: {grid_position: 'WYBNRK,WCNETT'}
+      name: label_2
+      properties: {align: right, text: author}
+      type: Label
+    - layout_properties: {grid_position: 'WYBNRK,SLMLAO'}
+      name: label_3
+      properties: {text: time}
+      type: Label
+    - layout_properties: {grid_position: 'IPUPVC,NLGTNJ'}
+      name: content
+      properties: {}
+      type: RichText
     layout_properties: {full_width_row: true, grid_position: 'CJSITQ,BTKGAR'}
     name: outlined_card_1
+    properties: {role: outlined-card}
+    type: ColumnPanel
+  - layout_properties: {full_width_row: true, grid_position: 'PAUELS,QKJWKW'}
+    name: outlined_card_2
     properties: {role: outlined-card}
     type: ColumnPanel
   layout_properties: {slot: default}

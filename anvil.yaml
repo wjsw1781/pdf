@@ -1,23 +1,64 @@
 allow_embedding: false
 db_schema:
-  handle_pdf:
-    client: none
+  handle_article:
+    client: full
     columns:
-    - admin_ui: {order: 0, width: 200}
+    - admin_ui: {width: 200}
       name: user
       target: users
       type: link_single
-    - admin_ui: {order: 1, width: 200}
+    - admin_ui: {width: 200}
+      name: title
+      type: string
+    - admin_ui: {width: 200}
+      name: content
+      type: string
+    - admin_ui: {width: 200}
+      name: create_time
+      type: datetime
+    server: full
+    title: handle_article
+  handle_pdf:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      name: user
+      target: users
+      type: link_single
+    - admin_ui: {width: 200}
       name: pdf_file_path
       type: string
-    - admin_ui: {order: 2, width: 200}
+    - admin_ui: {width: 200}
       name: o3_0416_global_pdf_file_path
       type: string
-    - admin_ui: {order: 3, width: 200}
+    - admin_ui: {width: 200}
       name: status
       type: string
     server: full
     title: handle_pdf
+  handle_post:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      name: user
+      target: users
+      type: link_single
+    - admin_ui: {width: 200}
+      name: content
+      type: string
+    - admin_ui: {width: 200}
+      name: parent
+      target: handle_post
+      type: link_single
+    - admin_ui: {width: 200}
+      name: root
+      target: handle_post
+      type: link_single
+    - admin_ui: {width: 200}
+      name: create_at
+      type: datetime
+    server: full
+    title: handle_post
   users:
     client: none
     columns:
@@ -42,11 +83,14 @@ db_schema:
     - admin_ui: {width: 200}
       name: signed_up
       type: datetime
+    - admin_ui: {width: 200}
+      name: remembered_logins
+      type: simpleObject
     server: full
     title: Users
 dependencies: []
 metadata: {description: 江油人民y'y'd's, logo_img: 'asset:Snipaste_2025-08-20_10-50-39.png'}
-name: 江油热
+name: 肖海热
 native_deps: null
 package_name: ___
 renamed: true
@@ -61,7 +105,7 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-- client_config: {allow_signup: true, confirm_email: false, enable_automatically: true, use_email: true}
+- client_config: {allow_remember_me: true, allow_signup: true, confirm_email: false, enable_automatically: true, remember_me_days: 365, use_email: true}
   server_config: {user_table: users}
   source: /runtime/services/anvil/users.yml
 startup: {module: d_wode, type: form}

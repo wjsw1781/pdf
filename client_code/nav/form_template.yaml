@@ -13,7 +13,7 @@ components:
   - event_bindings: {click: link_2_copy_2_click}
     layout_properties: {full_width_row: true, grid_position: 'QEEGWK,PMNXZU'}
     name: link_2_copy_2
-    properties: {text: 好新闻 現役人氣}
+    properties: {text: 好贴 現役人氣}
     type: Link
   - event_bindings: {click: link_2_copy_click}
     layout_properties: {full_width_row: true, grid_position: 'DPRZYP,EJSLZP'}

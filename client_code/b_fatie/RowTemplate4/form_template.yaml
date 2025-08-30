@@ -1,0 +1,7 @@
+components:
+- layout_properties: {column: YATMPX}
+  name: button_1
+  properties: {text: 删除}
+  type: Button
+container: {type: DataRowPanel}
+is_package: true
