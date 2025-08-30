@@ -1,4 +1,4 @@
-from ._anvil_designer import navTemplate
+from ._anvil_designer import c_newsTemplate
 from anvil import *
 import anvil.facebook.auth
 import anvil.google.auth, anvil.google.drive
@@ -9,21 +9,9 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class nav(navTemplate):
+class c_news(c_newsTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
 
         # Any code you write here will run before the form opens.
-
-    def link_1_click(self, **event_args):
-       open_form('a_jianlixiugai')
-
-    def link_2_copy_click(self, **event_args):
-        open_form('d_wode')
-
-    def link_2_copy_2_click(self, **event_args):
-        open_form('c_news')
-
-    def link_2_click(self, **event_args):
-        open_form('b_fatie')
