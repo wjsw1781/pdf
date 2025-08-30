@@ -5,6 +5,24 @@ components:
     name: file_loader_1
     properties: {text: 上传pdf}
     type: FileLoader
+  - components:
+    - components:
+      - name: repeating_panel_1
+        properties: {item_template: a_jianlixiugai.RowTemplate1}
+        type: RepeatingPanel
+      layout_properties: {full_width_row: true, grid_position: 'KARZJB,VNWKEA'}
+      name: data_grid_1
+      properties:
+        columns:
+        - {data_key: user, id: ACKECH, title: user}
+        - {data_key: pdf_file_path, id: JKSVQT, title: pdf_file_path}
+        - {data_key: status, id: LIIZXZ, title: status}
+        - {data_key: column_1, id: VYYGJF, title: 下载}
+      type: DataGrid
+    layout_properties: {full_width_row: true, grid_position: 'WRSPCJ,IVOKJC'}
+    name: outlined_card_1
+    properties: {role: outlined-card}
+    type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
   properties: {}

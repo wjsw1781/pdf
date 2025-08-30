@@ -1,0 +1,7 @@
+components:
+- layout_properties: {column: VYYGJF}
+  name: button_1
+  properties: {text: 下载}
+  type: Button
+container: {type: DataRowPanel}
+is_package: true
