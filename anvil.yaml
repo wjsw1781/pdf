@@ -1,12 +1,17 @@
 allow_embedding: false
 dependencies: []
-name: M3 App 1
-package_name: M3_App_1
+metadata: {description: 江油人民y'y'd's, logo_img: 'asset:Snipaste_2025-08-20_10-50-39.png'}
+name: 江油热
+package_name: ___
 renamed: true
 runtime_options:
   client_version: '3'
-  server_spec: {base: python310-minimal}
+  server_spec: null
+  server_spec_disabled: {base: python310-minimal, requirements: ''}
   server_version: python3-sandbox
   version: 2
-services: []
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
 startup_form: Form1
