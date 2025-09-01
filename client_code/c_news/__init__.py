@@ -1,5 +1,6 @@
 from ._anvil_designer import c_newsTemplate
 from anvil import *
+import anvil.server
 import stripe.checkout
 import anvil.users
 import anvil.tables as tables

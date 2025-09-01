@@ -19,4 +19,5 @@ unique_ids:
     post_row.ItemTemplate1: '1756566865348321516656685.61127'
   modules: {}
   scripts: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1756720543896910376035631.0565'
