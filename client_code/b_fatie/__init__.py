@@ -1,6 +1,5 @@
 from ._anvil_designer import b_fatieTemplate
 from anvil import *
-from routing import router
 import anvil.server
 import stripe.checkout
 import anvil.tables as tables
