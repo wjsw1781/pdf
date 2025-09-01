@@ -9,6 +9,18 @@ components:
     name: outlined_card_1
     properties: {role: outlined-card}
     type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'FYJXOK,EEMCQY'}
+      name: label_2
+      properties:
+        text: |+
+          履歴書修正事業、技術記事共有事業、コメント事業をサポート
+
+      type: Label
+    layout_properties: {grid_position: 'ZRULKV,CIYUAM'}
+    name: outlined_card_2
+    properties: {role: outlined-card}
+    type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
   properties: {}
