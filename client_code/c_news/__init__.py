@@ -7,11 +7,6 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from routing.router import launch
-
-
-launch()                      # 激活路由器
-
 
 class c_news(c_newsTemplate):
     def __init__(self, **properties):
