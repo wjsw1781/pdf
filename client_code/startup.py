@@ -1,5 +1,5 @@
-import anvil.server
 from routing import router
+import anvil.server
 import stripe.checkout
 import anvil.users
 import anvil.tables as tables
