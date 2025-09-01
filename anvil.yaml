@@ -92,7 +92,10 @@ db_schema:
       type: simpleObject
     server: full
     title: Users
-dependencies: []
+dependencies:
+- dep_id: dep_z8e673a2pso9n5
+  resolution_hints: {app_id: 3PIDO5P3H4VPEMPL, name: routing, package_name: routing}
+  version: {version_tag: v0.4.0}
 metadata: {description: j'y人民y'y'd's, logo_img: 'https://baikebcs.bdimg.com/baike-react/common/logo-baike.svg'}
 name: hot
 native_deps: null
