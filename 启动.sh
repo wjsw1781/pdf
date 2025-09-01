@@ -1,6 +1,8 @@
 
 export http_proxy="socks5h://127.0.0.1:20160"
 export https_proxy="socks5h://127.0.0.1:20160"
+
+
 sudo apt install certbot
 sudo certbot certonly --standalone -d l4proxy.top -m 1781591279@qq.com --agree-tos --non-interactive
 sudo certbot renew --dry-run
