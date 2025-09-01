@@ -2,3 +2,4 @@
 *.pyo
 __pycache__
 .anvil-data
+server_code/main.py

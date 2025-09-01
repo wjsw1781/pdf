@@ -15,6 +15,13 @@ ps aux | grep anvil-app-server | awk '{print $2}' | xargs kill -9
 
 curl 101.132.61.226
 
+stripe密钥
+kzpf-xqow-cnfh-tbso-tutq
+
+
+pk_live_51S2RoqPN2nVEVllyusrxayXURtyYOeD2TxxGvNs99Q6HCWxK0wluq3N2eK7uXvBc61x2K8kz95Vv6APL12vLCEQ900FRH1gmxL
+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
+
 
 
 
