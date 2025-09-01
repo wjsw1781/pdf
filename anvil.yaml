@@ -93,10 +93,10 @@ db_schema:
     server: full
     title: Users
 dependencies: []
-metadata: {description: 江油人民y'y'd's, logo_img: 'asset:Snipaste_2025-08-20_10-50-39.png'}
-name: 肖海热
+metadata: {description: j'y人民y'y'd's, logo_img: 'https://baikebcs.bdimg.com/baike-react/common/logo-baike.svg'}
+name: hot
 native_deps: null
-package_name: ___
+package_name: hot
 renamed: true
 runtime_options:
   client_version: '3'
