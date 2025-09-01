@@ -15,3 +15,7 @@ ps aux | grep anvil-app-server | awk '{print $2}' | xargs kill -9
 
 curl 101.132.61.226
 
+
+
+
+
