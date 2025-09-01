@@ -1,16 +1,18 @@
 from ._anvil_designer import c_newsTemplate
 from anvil import *
+from routing import router
 import anvil.server
 import stripe.checkout
 import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-import anvil_routing as routing  
+from routing.router import launch
 
 
+launch()                      # 激活路由器
 
-@routing.route('terms-and-conditions')
+
 class c_news(c_newsTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
