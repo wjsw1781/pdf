@@ -1,4 +1,9 @@
 
+git config user.name 'wjsw1781'
+git config user.password '1781wjsw'
+git config user.email '1781591279@qq.com'
+git config  credential.helper store
+
 export http_proxy="socks5h://127.0.0.1:20160"
 export https_proxy="socks5h://127.0.0.1:20160"
 
