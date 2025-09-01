@@ -3,12 +3,12 @@ components:
   - components:
     - layout_properties: {full_width_row: true, grid_position: 'LEDEVJ,ORQDWS'}
       name: title_tb
-      properties: {}
+      properties: {placeholder: 标题}
       type: TextBox
     - components:
       - layout_properties: {width: 1115.3125, x: 0.953125, y: 0}
         name: content_rt
-        properties: {height: 248.41015625}
+        properties: {auto_expand: true, height: 248.41015625, placeholder: 正文}
         type: TextArea
       layout_properties: {full_width_row: true, grid_position: 'ANPPJT,KWVURK'}
       name: xy_panel_1
