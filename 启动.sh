@@ -8,7 +8,7 @@ ps aux | grep anvil-app-server
 ps aux | grep anvil-app-server | awk '{print $2}' | xargs kill -9
 
 
-101.132.61.226:3030
+101.132.61.226
 
-curl 101.132.61.226:3030
+curl 101.132.61.226
 
