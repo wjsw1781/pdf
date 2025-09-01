@@ -1,5 +1,6 @@
 from ._anvil_designer import a_jianlixiugaiTemplate
 from anvil import *
+from routing import router
 import anvil.server
 import stripe.checkout
 import anvil.tables as tables
