@@ -18,7 +18,7 @@ class d_wode(d_wodeTemplate):
         #     anvil.users.login_with_form(allow_cancel=True)
         import stripe.checkout
 
-        stripe.checkout.charge(amount=999,
+        stripe.checkout.charge(amount=1,
                             currency="GBP",
                             title="Acme Online Store",
                             description="3 Widgets")
