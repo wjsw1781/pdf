@@ -1,3 +1,6 @@
+
+
+
 数据库删除
 rm -rf /root/pdf/.anvil-data 
 
