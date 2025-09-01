@@ -1,6 +1,6 @@
 components:
 - event_bindings: {click: button_1_click}
-  layout_properties: {column: TRXIGF}
+  layout_properties: {column: CDNLGN}
   name: button_1
   properties: {text: 查看}
   type: Button
