@@ -92,7 +92,10 @@ db_schema:
       type: simpleObject
     server: full
     title: Users
-dependencies: []
+dependencies:
+- dep_id: dep_6oe26pnwurmug
+  resolution_hints: {app_id: 3PIDO5P3H4VPEMPL, name: routing, package_name: routing}
+  version: {version_tag: v0.4.0}
 metadata: {description: j'y人民y'y'd's, logo_img: 'https://baikebcs.bdimg.com/baike-react/common/logo-baike.svg'}
 name: hot
 native_deps: null
@@ -101,7 +104,7 @@ renamed: true
 runtime_options:
   client_version: '3'
   legacy_features: {__dict__: true, bootstrap3: true, class_names: true, root_container: true}
-  server_spec: null
+  server_spec: {base: python310-minimal}
   server_spec_disabled: {base: python310-minimal, requirements: ''}
   server_version: python3-sandbox
   version: 3

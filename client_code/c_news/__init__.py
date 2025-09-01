@@ -6,7 +6,11 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+import anvil_routing as routing  
 
+
+
+@routing.route('terms-and-conditions')
 class c_news(c_newsTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
