@@ -1,5 +1,7 @@
 from ._anvil_designer import d_wodeTemplate
 from anvil import *
+from routing import router
+import anvil.server
 import stripe.checkout
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -16,10 +18,4 @@ class d_wode(d_wodeTemplate):
 
         # while anvil.users.get_user() is None:
         #     anvil.users.login_with_form(allow_cancel=True)
-        import stripe.checkout
-
-        stripe.checkout.charge(amount=1,
-                            currency="GBP",
-                            title="Acme Online Store",
-                            description="3 Widgets")
         
