@@ -22,7 +22,7 @@
             "name": "Run Anvil (HTTPS)",
             "type": "debugpy",
             "request": "launch",
-            "module": "anvil_app_server",
+            "module": "anvil-app-server",
             "args": [
               "--app", ".",
               "--origin", "https://l4proxy.top",
