@@ -19,7 +19,7 @@ db_schema:
     server: full
     title: handle_article
   handle_pdf:
-    client: none
+    client: search
     columns:
     - admin_ui: {width: 200}
       name: user

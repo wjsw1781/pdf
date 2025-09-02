@@ -43,5 +43,4 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
     def refresh_grid(self):
         self.repeating_panel_1.items = app_tables.handle_pdf.search(
             user=anvil.users.get_user(),
-            sort=q.desc('created') if 'created' in app_tables.handle_pdf.list_columns() else None
         )
