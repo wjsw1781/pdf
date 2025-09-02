@@ -11,15 +11,12 @@ import anvil.server
 # them with @anvil.server.callable.
 # Here is an example - you can replace it with your own:
 
-import os, uuid
+import os
 
 
-def md5(string):
-    import hashlib
-    string=str(string)
-    md5_hash = hashlib.md5()
-    md5_hash.update(string.encode('utf-8'))
-    return md5_hash.hexdigest()
+import base64
+def md5(s):
+    return base64.urlsafe_b64encode(str(s).encode()).decode().rstrip('=')
 
 @anvil.server.callable
 def download_pdf(store_name, orig_name):
