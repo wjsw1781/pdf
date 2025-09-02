@@ -12,7 +12,7 @@ Below, you will find:
 ## Opening this app in Anvil and getting it online
 
 ### Cloning the app
-
+![alt text](image.png)
 Go to the [Anvil Editor](https://anvil.works/build?utm_source=github:app_README) (you might need to sign up for a free account) and click on “Clone from GitHub” (underneath the “Blank App” option):
 
 <img src="https://anvil.works/docs/version-control/img/git/clone-from-github.png" alt="Clone from GitHub"/>
