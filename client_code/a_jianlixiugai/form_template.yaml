@@ -14,9 +14,9 @@ components:
       name: data_grid_1
       properties:
         columns:
-        - {data_key: pdf_file_path, id: JKSVQT, title: pdf_file_path}
-        - {data_key: status, id: LIIZXZ, title: status}
         - {data_key: column_1, id: VYYGJF, title: 下载}
+        - {data_key: status, id: SLPLPS, title: status}
+        - {data_key: file_name, id: GSENON, title: file_name}
       type: DataGrid
     layout_properties: {full_width_row: true, grid_position: 'WRSPCJ,IVOKJC'}
     name: outlined_card_1
