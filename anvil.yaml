@@ -112,10 +112,5 @@ services:
 - client_config: {allow_remember_me: true, allow_signup: true, confirm_email: false, enable_automatically: true, remember_me_days: 365, use_email: true}
   server_config: {user_table: users}
   source: /runtime/services/anvil/users.yml
-- client_config:
-    live_mode: true
-    publishable_key: {live: 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}
-  server_config: {}
-  source: /runtime/services/stripe.yml
 startup: {module: paddle, type: form}
 startup_form: null
