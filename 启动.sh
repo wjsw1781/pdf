@@ -47,7 +47,6 @@ nohup anvil-app-server --origin https://l4proxy.top --manual-cert-file /etc/lets
 
 ps aux | grep anvil-app-server 
 ps aux | grep anvil-app-server | awk '{print $2}' | xargs kill -9  
-ps aux | grep anvil-app-server | awk '{print $2}' | xargs kill -9  &&  nohup anvil-app-server --origin https://l4proxy.top --manual-cert-file /etc/letsencrypt/live/l4proxy.top/fullchain.pem --manual-cert-key-file /etc/letsencrypt/live/l4proxy.top/privkey.pem --port 443 >/dev/null 2>&1 &
 
 
 
