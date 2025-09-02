@@ -28,7 +28,6 @@ def sync_dir_to_table_handle_media():
                     "file_path": os.path.join(ROOT, f),
                 })
 
-    pass
 
 
 from anvil import BlobMedia          # ← 关键
