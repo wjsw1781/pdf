@@ -45,7 +45,7 @@ class RowTemplate7(RowTemplate7Template):
             el = anvil.js.window.document.createElement("video")
             el.src = url
             el.controls = True
-            el.style.maxWidth = "100%"
+            el.style.width = "100%"
             el.style.height = "auto"
 
         elif mime.startswith('text'):
