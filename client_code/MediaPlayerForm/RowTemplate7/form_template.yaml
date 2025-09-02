@@ -1,0 +1,8 @@
+components:
+- event_bindings: {click: button_1_click}
+  layout_properties: {column: WAVDYD}
+  name: button_1
+  properties: {text: 热}
+  type: Button
+container: {type: DataRowPanel}
+is_package: true
