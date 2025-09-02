@@ -20,14 +20,24 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
         try:
             if file is None or file.content_type != 'application/pdf':
                 raise ValueError("请上传 pdf 文件")
-
-            anvil.server.call('save_pdf', file)   # 直接把 file 传过去
-            self.refresh_grid()                   # Ajax 刷新列表
-            Notification("上传成功!", style='success').show()
+    
+            # 把字节流发给服务器保存
+            url = anvil.server.call(
+                'save_pdf',
+                file.name,
+                file.get_bytes()
+            )
+    
+            # 刷新列表
+            self.refresh_grid()
+    
+            Notification(f"上传成功，可下载 URL:\n{url}",
+                        timeout=5, style='success').show()
+    
         except Exception as e:
             alert(str(e))
         finally:
-            self.file_loader_1.clear()            # 允许再次选同一个文件
+            self.file_loader_1.clear()
 
     # 重新读取当前用户的 PDF 列表
     def refresh_grid(self):
