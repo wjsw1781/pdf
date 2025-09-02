@@ -9,6 +9,8 @@ import anvil.server
 
 anvil.server.connect("server_ADNWFSLCNZZJXF3D6PENXVYA-LBFN3UH6VBCSDU2G")
 
+
+
 def md5(string):
     import hashlib
     string=str(string)
@@ -28,11 +30,12 @@ def download_pdf(store_name, orig_name):
     store_name : 保存时生成的唯一文件名
     orig_name  : 想让用户下载时看到的原始文件名
     """
-    full_path = os.path.join('./files/pdfs/', store_name)
-    if not os.path.isfile(full_path):
-        raise Exception("文件不存在")
+    user = anvil.users.get_user()
+    if user is None:
+        raise Exception("请先登录")
+    file_path = f"./files/pdf/{md5(user['email'])}/{orig_name}"
 
-    with open(full_path, "rb") as fp:
+    with open(file_path, "rb") as fp:
         data = fp.read()
 
     return anvil.BlobMedia(
