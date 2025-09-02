@@ -22,21 +22,18 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
                 'application/pdf',      # .pdf
                 'text/x-python',        # .py     （有些浏览器会给 text/plain）
                 'text/plain',           # .py     （备用）
-                'application/msword',   # .doc
-                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'  # .docx
+                'text/x-python-script',   # .doc
+                'text/javascript'
             ]
             if file is None or file.content_type not in ALLOWED_TYPES:
-                raise ValueError("请上传 pdf 或者 py 文件")
+                raise ValueError("请上传 pdf 或者 py 或者 js 文件")
     
             # 把字节流发给服务器保存
             url =  anvil.server.call('save_pdf', file)
 
-    
-            # 刷新列表
             self.refresh_grid()
     
-            Notification(f"上传成功，可下载 URL:\n{url}",
-                        timeout=5, style='success').show()
+            Notification(f"上传成功:\n{url}", timeout=5, style='success').show()
     
         except Exception as e:
             alert(str(e))
