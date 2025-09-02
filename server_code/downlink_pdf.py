@@ -5,45 +5,45 @@ import os, uuid
 
 
 
-import anvil.server
+# import anvil.server
 
-anvil.server.connect("server_ADNWFSLCNZZJXF3D6PENXVYA-LBFN3UH6VBCSDU2G")
-
-
-
-# 通用媒体播放系统
-import anvil.server, anvil.media, os, mimetypes,datetime
-
-ROOT = '/root/pdf/files/txt_img_video_audio_play'
-@anvil.server.callable
-def sync_dir_to_table_handle_media():
-    for f in sorted(os.listdir(ROOT)):
-        if os.path.isfile(os.path.join(ROOT, f)):
-            if len(app_tables.handle_media.search(file_name=f)) ==0:
-                app_tables.handle_media.add_row(**{
-                    "file_name": f,
-                    "mime": mimetypes.guess_type(f)[0] or "",
-                    "create_time":datetime.datetime.now(),
-                    'size':os.path.getsize(os.path.join(ROOT, f)),
-                    "file_path": os.path.join(ROOT, f),
-                })
+# anvil.server.connect("server_ADNWFSLCNZZJXF3D6PENXVYA-LBFN3UH6VBCSDU2G")
 
 
 
-from anvil import BlobMedia          # ← 关键
+# # 通用媒体播放系统
+# import anvil.server, anvil.media, os, mimetypes,datetime
 
-@anvil.server.callable
-def fetch(item):
-    file_path = item['file_path']
-    # print(file_path)
-    mime = mimetypes.guess_type(file_path)[0] or "application/octet-stream"
-    with open(file_path, "rb") as fp:
-        data = fp.read()
-    blob = BlobMedia(mime,
-                     data,
-                     name=os.path.basename(file_path))  
-    # print(anvil.media.get_url(blob)  )
-    return blob
+# ROOT = '/root/pdf/files/txt_img_video_audio_play'
+# @anvil.server.callable
+# def sync_dir_to_table_handle_media():
+#     for f in sorted(os.listdir(ROOT)):
+#         if os.path.isfile(os.path.join(ROOT, f)):
+#             if len(app_tables.handle_media.search(file_name=f)) ==0:
+#                 app_tables.handle_media.add_row(**{
+#                     "file_name": f,
+#                     "mime": mimetypes.guess_type(f)[0] or "",
+#                     "create_time":datetime.datetime.now(),
+#                     'size':os.path.getsize(os.path.join(ROOT, f)),
+#                     "file_path": os.path.join(ROOT, f),
+#                 })
+
+
+
+# from anvil import BlobMedia          # ← 关键
+
+# @anvil.server.callable
+# def fetch(item):
+#     file_path = item['file_path']
+#     # print(file_path)
+#     mime = mimetypes.guess_type(file_path)[0] or "application/octet-stream"
+#     with open(file_path, "rb") as fp:
+#         data = fp.read()
+#     blob = BlobMedia(mime,
+#                      data,
+#                      name=os.path.basename(file_path))  
+#     # print(anvil.media.get_url(blob)  )
+#     return blob
 
 # def md5(string):
 #     import hashlib
