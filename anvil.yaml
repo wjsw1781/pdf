@@ -115,7 +115,7 @@ services:
 - client_config:
     live_mode: true
     publishable_key: {live: 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}
-  server_config: {refresh_token: rt_SyQSqbO0uVbiNyRyDOUsZWounSw0wGVg8OZDgtm15pPdDgNI, stripe_user_id: acct_1S2RoqPN2nVEVlly}
+  server_config: {}
   source: /runtime/services/stripe.yml
 startup: {module: paddle, type: form}
 startup_form: null
