@@ -3,7 +3,7 @@ components:
   - event_bindings: {change: file_loader_1_change}
     layout_properties: {full_width_row: true, grid_position: 'FNKKDA,GQNAFI'}
     name: file_loader_1
-    properties: {text: 上传pdf}
+    properties: {text: 上传pdf_or_py}
     type: FileLoader
   - components:
     - components:

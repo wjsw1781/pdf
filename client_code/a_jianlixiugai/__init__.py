@@ -14,26 +14,24 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
+        self.refresh_grid()
 
-        # Any code you write here will run before the form opens.
     def file_loader_1_change(self, file, **event_args):
         try:
             if file is None or file.content_type != 'application/pdf':
                 raise ValueError("请上传 pdf 文件")
 
-            data     = file.get_bytes()
-            size_kb  = len(data) / 1024
-            first_ln = data.split(b'\n', 1)[0].decode('latin1', errors='ignore')
-
-            # 把元信息等展示在 outlined_card_1 中
-            self.outlined_card_1.clear()
-            self.outlined_card_1.add_component(Label(text=f"文件名：{file.name}"))
-            self.outlined_card_1.add_component(Label(text=f"文件大小：{size_kb:.1f} KB"))
-            self.outlined_card_1.add_component(Label(text=f"PDF 版本号：{first_ln}"))
-
-
-            result_msg = anvil.server.call('save_pdf', file.name, data)
-
+            anvil.server.call('save_pdf', file)   # 直接把 file 传过去
+            self.refresh_grid()                   # Ajax 刷新列表
+            Notification("上传成功!", style='success').show()
         except Exception as e:
             alert(str(e))
-        self.file_loader_1.clear()
+        finally:
+            self.file_loader_1.clear()            # 允许再次选同一个文件
+
+    # 重新读取当前用户的 PDF 列表
+    def refresh_grid(self):
+        self.repeating_panel_1.items = app_tables.handle_pdf.search(
+            user=anvil.users.get_user(),
+            sort=q.desc('created') if 'created' in app_tables.handle_pdf.list_columns() else None
+        )
