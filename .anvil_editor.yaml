@@ -21,5 +21,4 @@ unique_ids:
   modules:
     startup: '1756744400191465224863793.14197'
   scripts: {}
-  server_modules:
-    ServerModule1: '1756720543896910376035631.0565'
+  server_modules: {}
