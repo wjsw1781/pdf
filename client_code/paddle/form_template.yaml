@@ -1,181 +1,121 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'CTARBH,DQXIUF'}
+  - layout_properties: {full_width_row: true, grid_position: 'CTARBH,DQXIUF'}
     name: rich_text_1
     properties:
       content: |
-        <!DOCTYPE html>
-        <html lang="zh-CN">
-        <head>
-        <meta charset="utf-8">
-        <title>价格与法律信息 / Pricing & Legal</title>
-        <style>
-        /* ===== 基础排版 ===== */
-        body{
-          font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-          line-height:1.6;
-          margin:0;
-          padding:0 20px;
-          max-width:920px;
-          margin-left:auto;
-          margin-right:auto;
-          background:#fcfcfe;
-        }
-        h1{margin-top:40px;margin-bottom:24px;text-align:center;}
-        h2{margin-top:48px;margin-bottom:16px;}
-        nav{margin-bottom:32px;text-align:center;}
-        nav a{margin:0 8px;color:#5c6bc0;text-decoration:none;}
-        nav a:hover{text-decoration:underline;}
-        section{margin-bottom:60px;}
-        ul{padding-left:20px;}
-        .bilingual{margin:16px 0;}
-        b{font-weight:600;}
+        <!-- 把下面整段贴进同一个 RichText，format 选 HTML -->
+        <h1 style="text-align:center;font-size:32px;margin:32px 0 16px;">
+          价格与法律信息 / Pricing &amp; Legal
+        </h1>
 
-        /* ===== Pricing 表格 ===== */
-        table.pricing{
-          width:100%;
-          border-collapse:separate;
-          border-spacing:16px;
-        }
-        table.pricing td{
-          border:2px solid #c5cae9;          /* 边框加粗 */
-          background:#f6f7ff;                /* 浅背景色 */
-          border-radius:10px;
-          padding:20px;
-          vertical-align:top;
-          box-shadow:0 2px 4px rgba(0,0,0,.04);
-        }
-        table.pricing .plan{font-weight:600;font-size:18px;}
-        table.pricing .price{font-size:28px;font-weight:700;margin:8px 0;}
-        </style>
-        </head>
+        <!-- ========= 顶部导航 ========= -->
+        <p style="text-align:center;margin-bottom:24px;font-size:15px;">
+          <a href="#pricing">价格 / Pricing</a> |
+          <a href="#terms">服务条款 / Terms</a> |
+          <a href="#privacy">隐私政策 / Privacy</a> |
+          <a href="#refund">退款政策 / Refund</a>
+        </p>
 
-        <body>
-        <h1>价格与法律信息 / Pricing & Legal</h1>
+        <!-- ========= Pricing ========= -->
+        <a name="pricing"></a>
+        <h2>价格 / Pricing</h2>
+        <table style="width:100%;border-collapse:separate;border-spacing:16px;">
+          <tr>
 
-        <nav>
-         <a href="#pricing">价格 / Pricing</a> |
-         <a href="#terms">服务条款 / Terms</a> |
-         <a href="#privacy">隐私政策 / Privacy</a> |
-         <a href="#refund">退款政策 / Refund</a>
-        </nav>
+            <!-- Basic -->
+            <td style="border:2px solid #c5cae9;background:#f6f7ff;border-radius:10px;padding:18px;">
+              <div style="font-weight:600;font-size:18px;">基础版 / Basic</div>
+              <div style="font-size:24px;font-weight:700;margin:6px 0;">¥29 / 次 · $3.99</div>
+              <ul style="padding-left:18px;margin:8px 0;">
+                <li>上传 1 份 PDF 或图片，美化后返回<br>
+                    Upload 1 PDF or image, beautified output.</li>
+                <li>48 小时内交付<br>
+                    Delivered within 48 h.</li>
+              </ul>
+            </td>
 
-        <!-- ──────────────────────────────────────────────── -->
-        <section id="pricing">
-         <h2>价格 / Pricing</h2>
+            <!-- Standard -->
+            <td style="border:2px solid #c5cae9;background:#f6f7ff;border-radius:10px;padding:18px;">
+              <div style="font-weight:600;font-size:18px;">标准版 / Standard</div>
+              <div style="font-size:24px;font-weight:700;margin:6px 0;">¥48 / 次 · $6.99</div>
+              <ul style="padding-left:18px;margin:8px 0;">
+                <li>上传最多 3 份 PDF/图片，专业排版<br>
+                    Up to 3 PDFs/images, pro layout.</li>
+                <li>可上传 .py 文件，由我们执行并返回结果<br>
+                    Upload .py, we execute and return result.</li>
+                <li>36 小时内交付<br>
+                    Delivered within 36 h.</li>
+              </ul>
+            </td>
 
-         <table class="pricing">
-           <tr>
+            <!-- Pro -->
+            <td style="border:2px solid #c5cae9;background:#f6f7ff;border-radius:10px;padding:18px;">
+              <div style="font-weight:600;font-size:18px;">专业版 / Pro</div>
+              <div style="font-size:24px;font-weight:700;margin:6px 0;">¥68 / 次 · $9.99</div>
+              <ul style="padding-left:18px;margin:8px 0;">
+                <li>不限数量的 PDF/图片，全套美化<br>
+                    Unlimited PDFs/images, full beautification.</li>
+                <li>上传 .py 文件，由我们代为执行并反馈输出<br>
+                    Upload .py, we run it and send back output.</li>
+                <li>24 小时内交付 + 优先邮件通知<br>
+                    Delivered within 24 h with priority e-mail.</li>
+              </ul>
+            </td>
 
-             <!-- 基础 Basic -->
-             <td>
-               <div class="plan">基础版 / Basic</div>
-               <div class="price">¥29 / 次 · $3.99</div>
-               <ul>
-                 <li>上传 1 份 PDF 或图片，美化后返回<br>
-                     Upload 1 PDF or image, beautified output.</li>
-                 <li>48 小时内交付<br>
-                     Delivered within 48 h.</li>
-               </ul>
-             </td>
+          </tr>
+        </table>
 
-             <!-- 标准 Standard -->
-             <td>
-               <div class="plan">标准版 / Standard</div>
-               <div class="price">¥48 / 次 · $6.99</div>
-               <ul>
-                 <li>上传最多 3 份 PDF/图片，专业排版<br>
-                     Up to 3 PDFs/images, pro layout.</li>
-                 <li>可上传 .py 文件，由我们安全执行并返回结果<br>
-                     Upload a .py file, we execute safely and return result.</li>
-                 <li>36 小时内交付<br>
-                     Delivered within 36 h.</li>
-               </ul>
-             </td>
-
-             <!-- 专业 Pro -->
-             <td>
-               <div class="plan">专业版 / Pro</div>
-               <div class="price">¥68 / 次 · $9.99</div>
-               <ul>
-                 <li>不限数量的 PDF/图片，一次性全套美化<br>
-                     Unlimited PDFs/images, full beautification.</li>
-                 <li>上传 .py 文件，由我们代为执行并反馈输出<br>
-                     Upload .py, we run it and send back output.</li>
-                 <li>24 小时内交付 + 优先邮件通知<br>
-                     Delivered within 24 h with priority e-mail.</li>
-               </ul>
-             </td>
-
-           </tr>
-         </table>
-        </section>
-
-        <!-- ──────────────────────────────────────────────── -->
-        <section id="terms">
-         <h2>服务条款 / Terms and Conditions</h2>
-         <p class="bilingual">
+        <!-- ========= Terms ========= -->
+        <a name="terms"></a>
+        <h2>服务条款 / Terms and Conditions</h2>
+        <p>
           本服务用于向您提供文档美化与受控代码执行功能。您提交的文件必须拥有合法版权并符合当地法律。<br>
           This service provides document beautification and sandboxed code execution. You must own the legal rights to the files you upload and comply with applicable laws.
-         </p>
-         <p class="bilingual">
-          支付成功后即视为您同意下列条款：<br>
-          By completing a payment you agree to the following terms:
-         </p>
-         <ul>
-           <li>您对上传内容负全部责任，我们仅按指令处理。<br>
-               You bear full responsibility for uploaded content; we process it as-is.</li>
-           <li>禁止上传任何违法、侵权或恶意软件。<br>
-               Uploading illegal, infringing or malicious software is strictly prohibited.</li>
-           <li>处理结果交付后 7 天内可再次下载，之后将被自动删除。<br>
-               Result files can be re-downloaded within 7 days, after which they are deleted automatically.</li>
-           <li>除法律要求外，我们不对文件内容进行人工审核。<br>
-               We do not manually review file contents except as required by law.</li>
-           <li>本条款受中华人民共和国法律管辖；若为境外用户，则以服务器所在地法律为准。<br>
-               These terms are governed by the laws of P.R. China; for overseas users, by the law where the server is located.</li>
-         </ul>
-        </section>
+        </p>
+        <p>支付成功后即视为您同意下列条款： / By completing a payment you agree to the following terms:</p>
+        <ul>
+          <li>您对上传内容负全部责任，我们仅按指令处理。<br>
+              You bear full responsibility for uploaded content; we process it as-is.</li>
+          <li>禁止上传任何违法、侵权或恶意软件。<br>
+              Uploading illegal, infringing or malicious software is strictly prohibited.</li>
+          <li>处理结果交付后 7 天内可再次下载，之后自动删除。<br>
+              Result files can be re-downloaded within 7 days, then auto-deleted.</li>
+          <li>除法律要求外，我们不对文件内容进行人工审核。<br>
+              We do not manually review file contents except as required by law.</li>
+        </ul>
 
-        <!-- ──────────────────────────────────────────────── -->
-        <section id="privacy">
-         <h2>隐私政策 / Privacy Policy</h2>
-         <p class="bilingual">
+        <!-- ========= Privacy ========= -->
+        <a name="privacy"></a>
+        <h2>隐私政策 / Privacy Policy</h2>
+        <p>
           我们仅收集提供服务所必需的最小信息，包括：电子邮件、上传文件及支付流水号。<br>
-          We collect only minimal data required to deliver the service: e-mail, uploaded files, and payment transaction ID.
-         </p>
-         <ul>
-           <li>所有文件存储于加密对象存储，7 天后自动销毁。<br>
-               All files are stored in encrypted object storage and auto-deleted after 7 days.</li>
-           <li>不会将数据出售、出租或用于广告营销。<br>
-               We never sell, rent or use data for advertising.</li>
-           <li>如需删除账户，可邮件至 support@example.com 请求。<br>
-               To delete your account, e-mail support@example.com.</li>
-           <li>我们使用 Paddle 处理付款，其隐私政策请参见 https://paddle.com/legal/privacy。<br>
-               Payments are processed by Paddle; see their privacy policy at https://paddle.com/legal/privacy.</li>
-         </ul>
-        </section>
+          We collect only the minimal data required to deliver the service: e-mail, uploaded files, and payment transaction ID.
+        </p>
+        <ul>
+          <li>所有文件存储于加密对象存储，7 天后自动销毁。<br>
+              All files are stored in encrypted object storage and auto-deleted after 7 days.</li>
+          <li>不会将数据出售、出租或用于广告营销。<br>
+              We never sell, rent or use data for advertising.</li>
+          <li>如需删除账户，请邮件至 support@example.com。<br>
+              To delete your account, e-mail support@example.com.</li>
+        </ul>
 
-        <!-- ──────────────────────────────────────────────── -->
-        <section id="refund">
-         <h2>退款政策 / Refund Policy</h2>
-         <p class="bilingual">
-          如果我们在 24 小时内未能交付可下载的处理结果，或结果与下注脚描述严重不符，您有权申请退款。<br>
+        <!-- ========= Refund ========= -->
+        <a name="refund"></a>
+        <h2>退款政策 / Refund Policy</h2>
+        <p>
+          如果我们在 24 小时内未能交付可下载的处理结果，或结果与约定严重不符，您可申请退款。<br>
           If we fail to deliver a downloadable result within 24 hours, or the output materially deviates from the agreed scope, you may request a refund.
-         </p>
-         <ul>
-           <li>退款申请必须在支付后 14 天内提交。<br>
-               Refund requests must be submitted within 14 days of purchase.</li>
-           <li>请通过 support@example.com 提交订单号与理由。<br>
-               Send order ID and reason to support@example.com.</li>
-           <li>我们将在 5 个工作日内处理并原路退回。<br>
-               We will process and return the payment within 5 business days.</li>
-           <li>若已成功下载最终文件，则视为订单完成，不再支持退款。<br>
-               If the final file has been successfully downloaded, the order is considered fulfilled and non-refundable.</li>
-         </ul>
-        </section>
-
-        </body>
-        </html>
+        </p>
+        <ul>
+          <li>退款申请须在支付后 14 天内提交。<br>
+              Refund requests must be submitted within 14 days of purchase.</li>
+          <li>请通过 support@example.com 提交订单号与理由。<br>
+              Send order ID and reason to support@example.com.</li>
+          <li>我们将在 5 个工作日内处理并原路退回。<br>
+              We will process and return the payment within 5 business days.</li>
+        </ul>
       format: restricted_html
     type: RichText
   layout_properties: {slot: default}

@@ -3,7 +3,7 @@ components:
   - event_bindings: {click: link_1_click}
     layout_properties: {full_width_row: true, grid_position: 'NJNWLL,QDATBV'}
     name: link_1
-    properties: {text: 修改简历 履歴書を修正}
+    properties: {text: 修改简历 履歴書を修正 or run_py_on_l4}
     type: Link
   - event_bindings: {click: link_2_click}
     layout_properties: {full_width_row: true, grid_position: 'HTGDKZ,OVQJHS'}
