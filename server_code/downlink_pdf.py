@@ -5,7 +5,9 @@ import os, uuid
 
 
 
+import anvil.server
 
+anvil.server.connect("server_BMGI7W2DOLRQZMATAMIU45GO-LBFN3UH6VBCSDU2G")
 
 
 # 1. 你想把文件放到哪里
