@@ -22,28 +22,24 @@ def md5(string):
 
 
 # 2. 暴露一个 http_endpoint 用来回取文件
-@anvil.server.http_endpoint('/pdfs/:fname')
-def get_pdf(fname, **qs):
+@anvil.server.callable
+def download_pdf(store_name, orig_name):
     """
-    访问  https://your-domain/_/api/pdfs/<fname>  可下载文件
+    store_name : 保存时生成的唯一文件名
+    orig_name  : 想让用户下载时看到的原始文件名
     """
-    full_path = os.path.join(STORAGE_DIR, fname)
+    full_path = os.path.join('./files/pdfs/', store_name)
     if not os.path.isfile(full_path):
-        return anvil.server.HttpResponse(404, "Not found")
+        raise Exception("文件不存在")
 
-    with open(full_path, 'rb') as fp:
+    with open(full_path, "rb") as fp:
         data = fp.read()
 
-    # 告诉浏览器直接下载，并用原来的文件名显示
-    return anvil.server.HttpResponse(
-        200,
+    return anvil.BlobMedia(
+        "application/pdf",
         data,
-        headers={
-            "Content-Type": "application/pdf",
-            "Content-Disposition": f'attachment; filename="{fname}"'
-        }
+        name=orig_name            # 浏览器保存时显示的名字
     )
-
 
 
 # 3. 真正的保存接口，供前端调用
