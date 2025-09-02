@@ -18,8 +18,15 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
 
     def file_loader_1_change(self, file, **event_args):
         try:
-            if file is None or file.content_type != 'application/pdf':
-                raise ValueError("请上传 pdf 文件")
+            ALLOWED_TYPES = [
+                'application/pdf',      # .pdf
+                'text/x-python',        # .py     （有些浏览器会给 text/plain）
+                'text/plain',           # .py     （备用）
+                'application/msword',   # .doc
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'  # .docx
+            ]
+            if file is None or file.content_type not in ALLOWED_TYPES:
+                raise ValueError("请上传 pdf 或者 py 文件")
     
             # 把字节流发给服务器保存
             url =  anvil.server.call('save_pdf', file)
