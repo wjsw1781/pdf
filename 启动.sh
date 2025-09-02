@@ -3,8 +3,9 @@ git config user.name 'wjsw1781'
 git config user.password '1781wjsw'
 git config user.email '1781591279@qq.com'
 git config  credential.helper store
-
-
+cd
+python3 -m venv wzq
+source /root/wzq/bin/activate
 
 sudo apt install certbot
 sudo certbot certonly --standalone -d l4proxy.top -m 1781591279@qq.com --agree-tos --non-interactive
@@ -17,6 +18,7 @@ sudo certbot renew --dry-run
 rm -rf /root/pdf/.anvil-data 
 
 anvil-app-server  --app . --ip 0.0.0.0 --port 8443  --dep-id 3PIDO5P3H4VPEMPL=routing 
+anvil-app-server  --app . --ip 0.0.0.0 --port 8443 
 
 anvil-app-server --origin https://l4proxy.top --manual-cert-file /etc/letsencrypt/live/l4proxy.top/fullchain.pem --manual-cert-key-file /etc/letsencrypt/live/l4proxy.top/privkey.pem --port 443
 
