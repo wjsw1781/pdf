@@ -13,10 +13,13 @@ import anvil.server
 
 import os
 
-
+import datetime
 import base64
 def md5(s):
     return base64.urlsafe_b64encode(str(s).encode()).decode().rstrip('=')
+
+
+
 
 @anvil.server.callable
 def download_pdf(store_name, orig_name):
@@ -64,7 +67,8 @@ def save_pdf(fileobj):
         user          = user,
         pdf_file_path = public_url,   # 只是 text
         file_name = fileobj.name,   # 只是 text
-        status        = "uploaded"
+        status        = "uploaded",
+        create_time        = datetime.datetime.now()
     )
 
     return public_url
