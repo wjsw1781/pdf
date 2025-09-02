@@ -43,5 +43,6 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
     # 重新读取当前用户的 PDF 列表
     def refresh_grid(self):
         self.repeating_panel_1.items = app_tables.handle_pdf.search(
-            user=anvil.users.get_user(),
+            tables.order_by('create_time', ascending=False),
+            user=anvil.users.get_user()
         )
