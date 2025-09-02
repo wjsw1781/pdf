@@ -58,3 +58,4 @@ def save_pdf(filename, file_bytes):
 
     return public_url
 if __name__ == '__main__':
+    anvil.server.run_forever()
