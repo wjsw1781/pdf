@@ -1,7 +1,8 @@
 components:
-- layout_properties: {column: VYYGJF}
+- event_bindings: {click: button_1_click}
+  layout_properties: {column: VYYGJF}
   name: button_1
-  properties: {text: price}
+  properties: {text: 下载}
   type: Button
 container: {type: DataRowPanel}
 is_package: true

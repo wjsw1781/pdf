@@ -12,3 +12,11 @@ class RowTemplate1(RowTemplate1Template):
         self.init_components(**properties)
 
         # Any code you write here will run before the form opens.
+
+    def button_1_click(self, **event_args):
+        url = self.item['pdf_file_path']     # 形如 "/_/api/pdfs/<hash>"
+        if url:
+            # 在新标签页打开，浏览器会直接开始下载
+            anvil.js.window.open(url, "_blank")
+        else:
+            alert("找不到下载地址")
