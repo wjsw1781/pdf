@@ -22,11 +22,8 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
                 raise ValueError("请上传 pdf 文件")
     
             # 把字节流发给服务器保存
-            url = anvil.server.call(
-                'save_pdf',
-                file.name,
-                file.get_bytes()
-            )
+            url =  anvil.server.call('save_pdf', file)
+
     
             # 刷新列表
             self.refresh_grid()

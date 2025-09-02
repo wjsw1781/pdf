@@ -14,7 +14,6 @@ components:
       name: data_grid_1
       properties:
         columns:
-        - {data_key: user, id: ACKECH, title: user}
         - {data_key: pdf_file_path, id: JKSVQT, title: pdf_file_path}
         - {data_key: status, id: LIIZXZ, title: status}
         - {data_key: column_1, id: VYYGJF, title: 下载}
