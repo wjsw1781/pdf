@@ -5,9 +5,9 @@ import os, uuid
 
 
 
-import anvil.server
+# import anvil.server
 
-anvil.server.connect("server_ADNWFSLCNZZJXF3D6PENXVYA-LBFN3UH6VBCSDU2G")
+# anvil.server.connect("server_ADNWFSLCNZZJXF3D6PENXVYA-LBFN3UH6VBCSDU2G")
 
 
 
@@ -75,5 +75,7 @@ def save_pdf(fileobj):
     )
 
     return public_url
+
+
 if __name__ == '__main__':
     anvil.server.run_forever()

@@ -18,27 +18,6 @@ sudo certbot renew --dry-run
 数据库删除
 rm -rf /root/pdf/.anvil-data 
 
-使用 nginx 转发 同时过滤掉这些被扫描的垃圾流量
-
-<!-- 首先安装 openresty nginx -->
-sudo apt-get -y install --no-install-recommends wget gnupg ca-certificates
-wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -
-echo "deb http://openresty.org/package/ubuntu $(lsb_release -sc) main" > openresty.list
-sudo cp openresty.list /etc/apt/sources.list.d/
-sudo apt-get update
-sudo apt-get -y install --no-install-recommends openresty
-which openresty
-
-<!-- 添加配置 -->
-/root/pdf/nginx_conf.conf
-
-/usr/local/openresty/nginx/sbin/nginx  -t  -c /root/pdf/nginx_conf.conf
-
-<!-- 直接运行 -->
-/usr/local/openresty/nginx/sbin/nginx -c /root/pdf/nginx_conf.conf
-/usr/local/openresty/nginx/sbin/nginx -c /root/pdf/nginx_conf.conf -s stop
-/usr/local/openresty/nginx/sbin/nginx -c /root/pdf/nginx_conf.conf -s reload
-
 anvil-app-server --ip 0.0.0.0 --port 8443
 
 anvil-app-server --origin https://l4proxy.top --manual-cert-file /etc/letsencrypt/live/l4proxy.top/fullchain.pem --manual-cert-key-file /etc/letsencrypt/live/l4proxy.top/privkey.pem --port 443
