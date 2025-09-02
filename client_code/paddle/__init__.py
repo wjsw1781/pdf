@@ -1,7 +1,6 @@
 from ._anvil_designer import paddleTemplate
 from anvil import *
 import anvil.server
-from routing import router
 import stripe.checkout
 import anvil.users
 import anvil.tables as tables

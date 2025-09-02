@@ -10,17 +10,43 @@ components:
         <meta charset="utf-8">
         <title>价格与法律信息 / Pricing & Legal</title>
         <style>
-        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;margin:0;padding:0 20px;max-width:920px;margin-left:auto;margin-right:auto;}
+        /* ===== 基础排版 ===== */
+        body{
+          font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+          line-height:1.6;
+          margin:0;
+          padding:0 20px;
+          max-width:920px;
+          margin-left:auto;
+          margin-right:auto;
+          background:#fcfcfe;
+        }
         h1{margin-top:40px;margin-bottom:24px;text-align:center;}
+        h2{margin-top:48px;margin-bottom:16px;}
         nav{margin-bottom:32px;text-align:center;}
-        nav a{margin:0 8px;color:#0366d6;text-decoration:none;}
+        nav a{margin:0 8px;color:#5c6bc0;text-decoration:none;}
         nav a:hover{text-decoration:underline;}
         section{margin-bottom:60px;}
-        .card{border:1px solid #e0e0e0;border-radius:8px;padding:24px;}
-        .price{font-size:32px;font-weight:600;margin:12px 0;}
         ul{padding-left:20px;}
         .bilingual{margin:16px 0;}
         b{font-weight:600;}
+
+        /* ===== Pricing 表格 ===== */
+        table.pricing{
+          width:100%;
+          border-collapse:separate;
+          border-spacing:16px;
+        }
+        table.pricing td{
+          border:2px solid #c5cae9;          /* 边框加粗 */
+          background:#f6f7ff;                /* 浅背景色 */
+          border-radius:10px;
+          padding:20px;
+          vertical-align:top;
+          box-shadow:0 2px 4px rgba(0,0,0,.04);
+        }
+        table.pricing .plan{font-weight:600;font-size:18px;}
+        table.pricing .price{font-size:28px;font-weight:700;margin:8px 0;}
         </style>
         </head>
 
@@ -37,32 +63,52 @@ components:
         <!-- ──────────────────────────────────────────────── -->
         <section id="pricing">
          <h2>价格 / Pricing</h2>
-         <div class="card">
-           <div class="bilingual">
-             <b>专业版 / Pro Plan</b><br>
-             适用于需要 PDF/图片美化与代码托管执行的专业用户。<br>
-             For users who need PDF/Image beautification and secure code execution.
-           </div>
 
-           <div class="price">
-             ¥68 / 次 &nbsp;·&nbsp; $9.99 per task
-           </div>
+         <table class="pricing">
+           <tr>
 
-           <button style="padding:12px 24px;border:none;border-radius:6px;background:#4F46E5;color:#fff;cursor:pointer">
-             立即购买 / Buy Now
-           </button>
+             <!-- 基础 Basic -->
+             <td>
+               <div class="plan">基础版 / Basic</div>
+               <div class="price">¥29 / 次 · $3.99</div>
+               <ul>
+                 <li>上传 1 份 PDF 或图片，美化后返回<br>
+                     Upload 1 PDF or image, beautified output.</li>
+                 <li>48 小时内交付<br>
+                     Delivered within 48 h.</li>
+               </ul>
+             </td>
 
-           <ul>
-             <li>上传 PDF 或图片，一次性专业排版、配色优化<br>
-                 Upload PDF or images, one-time professional layout & color tuning.</li>
-             <li>上传 .py 文件，Node.js 加密沙箱安全运行并返回结果<br>
-                 Upload .py, run in encrypted Node.js sandbox, get the result.</li>
-             <li>24 小时内交付下载链接<br>
-                 Download link delivered within 24 hours.</li>
-             <li>邮件和站内信双重通知<br>
-                 Notification by e-mail and in-app message.</li>
-           </ul>
-         </div>
+             <!-- 标准 Standard -->
+             <td>
+               <div class="plan">标准版 / Standard</div>
+               <div class="price">¥48 / 次 · $6.99</div>
+               <ul>
+                 <li>上传最多 3 份 PDF/图片，专业排版<br>
+                     Up to 3 PDFs/images, pro layout.</li>
+                 <li>可上传 .py 文件，由我们安全执行并返回结果<br>
+                     Upload a .py file, we execute safely and return result.</li>
+                 <li>36 小时内交付<br>
+                     Delivered within 36 h.</li>
+               </ul>
+             </td>
+
+             <!-- 专业 Pro -->
+             <td>
+               <div class="plan">专业版 / Pro</div>
+               <div class="price">¥68 / 次 · $9.99</div>
+               <ul>
+                 <li>不限数量的 PDF/图片，一次性全套美化<br>
+                     Unlimited PDFs/images, full beautification.</li>
+                 <li>上传 .py 文件，由我们代为执行并反馈输出<br>
+                     Upload .py, we run it and send back output.</li>
+                 <li>24 小时内交付 + 优先邮件通知<br>
+                     Delivered within 24 h with priority e-mail.</li>
+               </ul>
+             </td>
+
+           </tr>
+         </table>
         </section>
 
         <!-- ──────────────────────────────────────────────── -->
@@ -140,6 +186,10 @@ components:
   name: navbar_links
   properties: {}
   type: FlowPanel
+- layout_properties: {slot: left-nav}
+  name: nav_1
+  properties: {}
+  type: form:nav
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
