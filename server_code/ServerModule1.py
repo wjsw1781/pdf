@@ -21,6 +21,7 @@ def md5(string):
     md5_hash.update(string.encode('utf-8'))
     return md5_hash.hexdigest()
 
+@anvil.server.callable
 def download_pdf(store_name, orig_name):
     """
     store_name : 保存时生成的唯一文件名
@@ -40,6 +41,8 @@ def download_pdf(store_name, orig_name):
         name=orig_name            # 浏览器保存时显示的名字
     )
 
+
+@anvil.server.callable
 def save_pdf(fileobj):
 
     # 1. 你想把文件放到哪里
