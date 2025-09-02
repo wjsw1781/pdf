@@ -1,0 +1,146 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'CTARBH,DQXIUF'}
+    name: rich_text_1
+    properties:
+      content: |
+        <!DOCTYPE html>
+        <html lang="zh-CN">
+        <head>
+        <meta charset="utf-8">
+        <title>价格与法律信息 / Pricing & Legal</title>
+        <style>
+        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;margin:0;padding:0 20px;max-width:920px;margin-left:auto;margin-right:auto;}
+        h1{margin-top:40px;margin-bottom:24px;text-align:center;}
+        nav{margin-bottom:32px;text-align:center;}
+        nav a{margin:0 8px;color:#0366d6;text-decoration:none;}
+        nav a:hover{text-decoration:underline;}
+        section{margin-bottom:60px;}
+        .card{border:1px solid #e0e0e0;border-radius:8px;padding:24px;}
+        .price{font-size:32px;font-weight:600;margin:12px 0;}
+        ul{padding-left:20px;}
+        .bilingual{margin:16px 0;}
+        b{font-weight:600;}
+        </style>
+        </head>
+
+        <body>
+        <h1>价格与法律信息 / Pricing & Legal</h1>
+
+        <nav>
+         <a href="#pricing">价格 / Pricing</a> |
+         <a href="#terms">服务条款 / Terms</a> |
+         <a href="#privacy">隐私政策 / Privacy</a> |
+         <a href="#refund">退款政策 / Refund</a>
+        </nav>
+
+        <!-- ──────────────────────────────────────────────── -->
+        <section id="pricing">
+         <h2>价格 / Pricing</h2>
+         <div class="card">
+           <div class="bilingual">
+             <b>专业版 / Pro Plan</b><br>
+             适用于需要 PDF/图片美化与代码托管执行的专业用户。<br>
+             For users who need PDF/Image beautification and secure code execution.
+           </div>
+
+           <div class="price">
+             ¥68 / 次 &nbsp;·&nbsp; $9.99 per task
+           </div>
+
+           <button style="padding:12px 24px;border:none;border-radius:6px;background:#4F46E5;color:#fff;cursor:pointer">
+             立即购买 / Buy Now
+           </button>
+
+           <ul>
+             <li>上传 PDF 或图片，一次性专业排版、配色优化<br>
+                 Upload PDF or images, one-time professional layout & color tuning.</li>
+             <li>上传 .py 文件，Node.js 加密沙箱安全运行并返回结果<br>
+                 Upload .py, run in encrypted Node.js sandbox, get the result.</li>
+             <li>24 小时内交付下载链接<br>
+                 Download link delivered within 24 hours.</li>
+             <li>邮件和站内信双重通知<br>
+                 Notification by e-mail and in-app message.</li>
+           </ul>
+         </div>
+        </section>
+
+        <!-- ──────────────────────────────────────────────── -->
+        <section id="terms">
+         <h2>服务条款 / Terms and Conditions</h2>
+         <p class="bilingual">
+          本服务用于向您提供文档美化与受控代码执行功能。您提交的文件必须拥有合法版权并符合当地法律。<br>
+          This service provides document beautification and sandboxed code execution. You must own the legal rights to the files you upload and comply with applicable laws.
+         </p>
+         <p class="bilingual">
+          支付成功后即视为您同意下列条款：<br>
+          By completing a payment you agree to the following terms:
+         </p>
+         <ul>
+           <li>您对上传内容负全部责任，我们仅按指令处理。<br>
+               You bear full responsibility for uploaded content; we process it as-is.</li>
+           <li>禁止上传任何违法、侵权或恶意软件。<br>
+               Uploading illegal, infringing or malicious software is strictly prohibited.</li>
+           <li>处理结果交付后 7 天内可再次下载，之后将被自动删除。<br>
+               Result files can be re-downloaded within 7 days, after which they are deleted automatically.</li>
+           <li>除法律要求外，我们不对文件内容进行人工审核。<br>
+               We do not manually review file contents except as required by law.</li>
+           <li>本条款受中华人民共和国法律管辖；若为境外用户，则以服务器所在地法律为准。<br>
+               These terms are governed by the laws of P.R. China; for overseas users, by the law where the server is located.</li>
+         </ul>
+        </section>
+
+        <!-- ──────────────────────────────────────────────── -->
+        <section id="privacy">
+         <h2>隐私政策 / Privacy Policy</h2>
+         <p class="bilingual">
+          我们仅收集提供服务所必需的最小信息，包括：电子邮件、上传文件及支付流水号。<br>
+          We collect only minimal data required to deliver the service: e-mail, uploaded files, and payment transaction ID.
+         </p>
+         <ul>
+           <li>所有文件存储于加密对象存储，7 天后自动销毁。<br>
+               All files are stored in encrypted object storage and auto-deleted after 7 days.</li>
+           <li>不会将数据出售、出租或用于广告营销。<br>
+               We never sell, rent or use data for advertising.</li>
+           <li>如需删除账户，可邮件至 support@example.com 请求。<br>
+               To delete your account, e-mail support@example.com.</li>
+           <li>我们使用 Paddle 处理付款，其隐私政策请参见 https://paddle.com/legal/privacy。<br>
+               Payments are processed by Paddle; see their privacy policy at https://paddle.com/legal/privacy.</li>
+         </ul>
+        </section>
+
+        <!-- ──────────────────────────────────────────────── -->
+        <section id="refund">
+         <h2>退款政策 / Refund Policy</h2>
+         <p class="bilingual">
+          如果我们在 24 小时内未能交付可下载的处理结果，或结果与下注脚描述严重不符，您有权申请退款。<br>
+          If we fail to deliver a downloadable result within 24 hours, or the output materially deviates from the agreed scope, you may request a refund.
+         </p>
+         <ul>
+           <li>退款申请必须在支付后 14 天内提交。<br>
+               Refund requests must be submitted within 14 days of purchase.</li>
+           <li>请通过 support@example.com 提交订单号与理由。<br>
+               Send order ID and reason to support@example.com.</li>
+           <li>我们将在 5 个工作日内处理并原路退回。<br>
+               We will process and return the payment within 5 business days.</li>
+           <li>若已成功下载最终文件，则视为订单完成，不再支持退款。<br>
+               If the final file has been successfully downloaded, the order is considered fulfilled and non-refundable.</li>
+         </ul>
+        </section>
+
+        </body>
+        </html>
+      format: restricted_html
+    type: RichText
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true
