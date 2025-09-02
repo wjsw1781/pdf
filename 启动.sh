@@ -16,7 +16,7 @@ sudo certbot renew --dry-run
 数据库删除
 rm -rf /root/pdf/.anvil-data 
 
-anvil-app-server  --app . --ip 0.0.0.0 --port 8443
+anvil-app-server  --app . --ip 0.0.0.0 --port 8443  --dep-id 3PIDO5P3H4VPEMPL=routing 
 
 anvil-app-server --origin https://l4proxy.top --manual-cert-file /etc/letsencrypt/live/l4proxy.top/fullchain.pem --manual-cert-key-file /etc/letsencrypt/live/l4proxy.top/privkey.pem --port 443
 
