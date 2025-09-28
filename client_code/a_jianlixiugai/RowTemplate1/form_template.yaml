@@ -1,13 +1,13 @@
 components:
-- event_bindings: {click: down_item_click}
-  layout_properties: {column: VYYGJF}
-  name: down_item
+- event_bindings: {click: button_1_click}
+  layout_properties: {column: MAQGBG}
+  name: button_1
   properties: {text: 下载}
   type: Button
-- event_bindings: {click: del_item_click}
-  layout_properties: {column: MUDSJG}
-  name: del_item
+- event_bindings: {click: button_2_click}
+  layout_properties: {column: IFRWXZ}
+  name: button_2
   properties: {text: 删除}
-  type: Link
+  type: Button
 container: {type: DataRowPanel}
 is_package: true
