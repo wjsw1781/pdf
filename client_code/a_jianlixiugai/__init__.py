@@ -15,6 +15,6 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
 
-binary_file_up_down
+
 
  
