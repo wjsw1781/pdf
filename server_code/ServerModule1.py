@@ -52,26 +52,23 @@ def save_pdf(fileobj):
     file_path = f"./files/pdf/{md5(user['email'])}/{fileobj.name}"
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     unique_name = md5(file_path)
-    public_url = f"/_/api/pdfs/{unique_name}"
-
-
-
-    if os.path.exists(file_path):
-        return public_url
-
+    
     with open(file_path, 'wb') as fp:
         fp.write(fileobj._content)
 
 
     app_tables.handle_pdf.add_row(
         user          = user,
-        pdf_file_path = public_url,   # 只是 text
+        
         file_name = fileobj.name,   # 只是 text
+        unique_name   = unique_name,
+
         status        = "uploaded",
         create_time        = datetime.datetime.now()
     )
 
-    return public_url
+    return unique_name
+
 
 
 # 通用媒体播放系统

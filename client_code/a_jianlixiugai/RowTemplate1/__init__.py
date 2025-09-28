@@ -23,3 +23,7 @@ class RowTemplate1(RowTemplate1Template):
             anvil.media.download(media)      # 触发浏览器保存
         except Exception as e:
             alert(str(e))
+
+    def link_1_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        pass

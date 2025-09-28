@@ -4,5 +4,10 @@ components:
   name: button_1
   properties: {text: 下载}
   type: Button
+- event_bindings: {click: link_1_click}
+  layout_properties: {column: MUDSJG}
+  name: link_1
+  properties: {text: 删除}
+  type: Link
 container: {type: DataRowPanel}
 is_package: true

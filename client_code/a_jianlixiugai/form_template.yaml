@@ -14,9 +14,10 @@ components:
       name: data_grid_1
       properties:
         columns:
-        - {data_key: column_1, id: VYYGJF, title: 下载}
         - {data_key: status, id: SLPLPS, title: status}
         - {data_key: file_name, id: GSENON, title: file_name}
+        - {data_key: column_1, id: VYYGJF, title: 下载}
+        - {data_key: column_1, id: MUDSJG, title: 删除}
       type: DataGrid
     layout_properties: {full_width_row: true, grid_position: 'WRSPCJ,IVOKJC'}
     name: outlined_card_1

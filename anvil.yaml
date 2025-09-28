@@ -48,7 +48,7 @@ db_schema:
     - admin_ui: {width: 200}
       name: pdf_file_path
       type: string
-    - admin_ui: {width: 200}
+    - admin_ui: {order: 2, width: 361}
       name: o3_0416_global_pdf_file_path
       type: string
     - admin_ui: {width: 200}
@@ -60,6 +60,9 @@ db_schema:
     - admin_ui: {order: 5, width: 200}
       name: create_time
       type: datetime
+    - admin_ui: {order: 6, width: 200}
+      name: unique_name
+      type: string
     server: full
     title: handle_pdf
   handle_post:
