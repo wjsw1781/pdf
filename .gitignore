@@ -4,3 +4,7 @@ __pycache__
 .anvil-data
 server_code/main.py
 files/pdf/**
+upload_binary_file/**
+
+
+
