@@ -15,6 +15,10 @@ db_schema:
     - admin_ui: {order: 3, width: 200}
       name: tags
       type: string
+    - admin_ui: {order: 4, width: 200}
+      name: user
+      target: users
+      type: link_single
     server: full
     title: binary_file_up_down
   handle_article:
