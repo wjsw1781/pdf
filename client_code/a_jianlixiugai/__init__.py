@@ -21,7 +21,7 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
             try:
                 # 调用服务器函数上传文件
                 anvil.server.call('upload_binary_file', file)
-                self.repeating_panel_2.items = app_tables.binary_file_up_down.search()
+                self.repeating_panel_1.items = app_tables.binary_file_up_down.search()
                 Notification(f"文件 '{file.name}' 上传成功！").show()
 
             except Exception as e:
