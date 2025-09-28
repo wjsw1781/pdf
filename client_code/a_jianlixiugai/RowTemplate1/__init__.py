@@ -11,19 +11,15 @@ class RowTemplate1(RowTemplate1Template):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
 
-        # Any code you write here will run before the form opens.
 
-    def button_1_click(self, **event_args):
+    def down_item_click(self, **event_args):
         try:
-            media = anvil.server.call(
-                'download_pdf',
-                self.item['pdf_file_path'],     # 唯一存储名
-                self.item['file_name']       # 给用户看的原名
-            )
-            anvil.media.download(media)      # 触发浏览器保存
+            media_object = anvil.server.call('get_binary_file',dict(self.item))
+            Notification(f"开始下载文件: {media_object.name}").show()
+            anvil.media.download(media_object)
         except Exception as e:
             alert(str(e))
 
-    def link_1_click(self, **event_args):
-        """This method is called when the link is clicked"""
-        pass
+    def del_item_click(self, **event_args):
+        self.item.delete()
+        self.parent.parent.parent.parent.parent.repeating_panel_1.items = app_tables.binary_file_up_down.search()

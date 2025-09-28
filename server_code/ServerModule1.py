@@ -20,54 +20,62 @@ def md5(s):
 
 
 
-
 @anvil.server.callable
-def download_pdf(store_name, orig_name):
-    """
-    store_name : 保存时生成的唯一文件名
-    orig_name  : 想让用户下载时看到的原始文件名
-    """
+def upload_binary_file(file):
     user = anvil.users.get_user()
+
     if user is None:
         raise Exception("请先登录")
-    file_path = f"./files/pdf/{md5(user['email'])}/{orig_name}"
-
-    with open(file_path, "rb") as fp:
-        data = fp.read()
-
-    return anvil.BlobMedia(
-        "application/pdf",
-        data,
-        name=orig_name            # 浏览器保存时显示的名字
-    )
-
-
-@anvil.server.callable
-def save_pdf(fileobj):
-
-    # 1. 你想把文件放到哪里
-    user = anvil.users.get_user()
-    if user is None:
-        raise Exception("请先登录")
-    file_path = f"./files/pdf/{md5(user['email'])}/{fileobj.name}"
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
-    unique_name = md5(file_path)
-    
-    with open(file_path, 'wb') as fp:
-        fp.write(fileobj._content)
-
-
-    app_tables.handle_pdf.add_row(
-        user          = user,
         
-        file_name = fileobj.name,   # 只是 text
-        unique_name   = unique_name,
+    import os
+    file_name = file.name
+    file_content = file._content
 
-        status        = "uploaded",
-        create_time        = datetime.datetime.now()
-    )
+    server_path = f'./upload_binary_file/{file_name}'
+    os.makedirs(os.path.dirname(server_path), exist_ok=True)
+    with open(server_path,'wb') as f:
+        f.write(file_content)
 
-    return unique_name
+    # 保存数据库
+    data_row = app_tables.binary_file_up_down.search(server_path=server_path)
+    if len(data_row) == 0:
+        app_tables.binary_file_up_down.add_row(
+            server_path=server_path,
+            file_name=file_name,
+            status = '上传完成',
+            tags = ""
+        )
+    else:
+        row = app_tables.binary_file_up_down.get(server_path=server_path)
+        row['file_name'] = file_name
+        row['tags'] = ""
+    pass
+
+
+@anvil.server.callable
+def get_binary_file(item):
+    server_path = item['server_path']
+    import anvil.media
+    media_object = anvil.media.from_file(server_path, "text/plain")
+    return media_object
+
+
+
+# 修改wg_server_public_ip 为 adsl 最新 ip
+@anvil.server.http_endpoint("/wg_server_public_ip_update", methods=["POST","GET"], authenticate_users=False)
+def wg_server_public_ip_update(**kw):
+    data = kw
+    if not data or "wg_server_ip" not in data or "wg_server_public_ip" not in data:
+        return (400, "need both     ---- wg_server_ip   wg_server_public_ip")
+
+    row = app_tables.wg_conf.get(wg_server_ip=data["wg_server_ip"])
+    if row is None:
+        return (404, "wg_server_ip not exit")
+
+    row["wg_server_public_ip"] = data["wg_server_public_ip"]
+    return dict(row)
+
+
 
 
 

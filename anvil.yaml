@@ -1,5 +1,22 @@
 allow_embedding: false
 db_schema:
+  binary_file_up_down:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: server_path
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: file_name
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: status
+      type: string
+    - admin_ui: {order: 3, width: 200}
+      name: tags
+      type: string
+    server: full
+    title: binary_file_up_down
   handle_article:
     client: full
     columns:

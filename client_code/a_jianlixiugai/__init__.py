@@ -14,35 +14,22 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
-        self.refresh_grid()
+
 
     def file_loader_1_change(self, file, **event_args):
-        try:
-            ALLOWED_TYPES = [
-                'application/pdf',      # .pdf
-                'text/x-python',        # .py     （有些浏览器会给 text/plain）
-                'text/plain',           # .py     （备用）
-                'text/x-python-script',   # .doc
-                'text/javascript'
-            ]
-            if file is None or file.content_type not in ALLOWED_TYPES:
-                raise ValueError("请上传 pdf 或者 py 或者 js 文件")
-    
-            # 把字节流发给服务器保存
-            url =  anvil.server.call('save_pdf', file)
+        """This method is called when a new file is loaded into this FileLoader"""
+        if file:
+            try:
+                # 调用服务器函数上传文件
+                anvil.server.call('upload_binary_file', file)
+                self.repeating_panel_2.items = app_tables.binary_file_up_down.search()
+                Notification(f"文件 '{file.name}' 上传成功！").show()
 
-            self.refresh_grid()
-    
-            Notification(f"上传成功:\n{url}", timeout=5, style='success').show()
-    
-        except Exception as e:
-            alert(str(e))
-        finally:
-            self.file_loader_1.clear()
+            except Exception as e:
+                Notification(f"文件上传失败: {e}", title="错误", style="danger").show()
+        else:
+            Notification("未选择文件进行上传。", style="warning").show()
 
-    # 重新读取当前用户的 PDF 列表
-    def refresh_grid(self):
-        self.repeating_panel_1.items = app_tables.handle_pdf.search(
-            tables.order_by('create_time', ascending=False),
-            user=anvil.users.get_user()
-        )
+
+
+ 
