@@ -1,7 +1,7 @@
 allow_embedding: false
 db_schema:
   binary_file_up_down:
-    client: none
+    client: full
     columns:
     - admin_ui: {order: 0, width: 200}
       name: server_path
@@ -36,7 +36,7 @@ db_schema:
     server: full
     title: handle_article
   handle_media:
-    client: search
+    client: full
     columns:
     - admin_ui: {order: 0, width: 147}
       name: file_name
@@ -56,7 +56,7 @@ db_schema:
     server: full
     title: handle_media
   handle_pdf:
-    client: search
+    client: full
     columns:
     - admin_ui: {width: 200}
       name: user
@@ -110,7 +110,7 @@ db_schema:
     server: full
     title: handle_post
   users:
-    client: none
+    client: full
     columns:
     - admin_ui: {width: 200}
       name: email
