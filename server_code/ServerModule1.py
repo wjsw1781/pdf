@@ -43,7 +43,8 @@ def upload_binary_file(file):
             server_path=server_path,
             file_name=file_name,
             status = '上传完成',
-            tags = ""
+            tags = "",
+            user = user,
         )
     else:
         row = app_tables.binary_file_up_down.get(server_path=server_path)
