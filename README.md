@@ -9,4 +9,5 @@ sudo apt install openjdk-17-jdk
 
 anvil-app-server --app . --ip 0.0.0.0 --port 9191 --auto-migrate 
 
+192.168.171.71:9191
 101.132.61.226:9191
