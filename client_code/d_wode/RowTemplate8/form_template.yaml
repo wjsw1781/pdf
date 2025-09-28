@@ -1,11 +1,11 @@
 components:
 - event_bindings: {click: button_1_click}
-  layout_properties: {column: MAQGBG}
+  layout_properties: {column: KOMGMA}
   name: button_1
   properties: {text: 下载}
   type: Button
 - event_bindings: {click: button_2_click}
-  layout_properties: {column: IFRWXZ}
+  layout_properties: {column: ZDNUVQ}
   name: button_2
   properties: {text: 删除}
   type: Button

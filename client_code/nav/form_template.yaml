@@ -26,12 +26,7 @@ components:
     name: link_3
     properties: {text: paddle_need}
     type: Link
-  - components:
-    - event_bindings: {click: link_4_click}
-      layout_properties: {grid_position: 'BXFPJY,SIELPZ'}
-      name: testpy
-      properties: {text: test}
-      type: Link
+  - components: []
     event_bindings: {click: link_4_click}
     layout_properties: {grid_position: 'FOUTUP,EEKWJU'}
     name: link_4

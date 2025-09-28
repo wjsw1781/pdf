@@ -12,17 +12,17 @@ components:
   - components:
     - components:
       - name: repeating_panel_1
-        properties: {item_template: a_jianlixiugai.RowTemplate1}
+        properties: {item_template: d_wode.RowTemplate8}
         type: RepeatingPanel
-      layout_properties: {grid_position: 'UTOMAE,ZPVUNC'}
+      layout_properties: {grid_position: 'WWGOZG,BMLJHW'}
       name: data_grid_1
       properties:
         columns:
-        - {data_key: file_name, id: IXKBSB, title: file_name}
-        - {data_key: status, id: BFBPVE, title: status}
-        - {data_key: tags, id: SDMQGX, title: tags}
-        - {data_key: column_1, id: MAQGBG, title: 下载}
-        - {data_key: column_1, id: IFRWXZ, title: 删除}
+        - {data_key: file_name, id: OXDGAI, title: file_name}
+        - {data_key: status, id: RLGYFJ, title: status}
+        - {data_key: tags, id: QXXXLB, title: tags}
+        - {data_key: column_1, id: KOMGMA, title: 下载}
+        - {data_key: column_2, id: ZDNUVQ, title: 删除}
       type: DataGrid
     layout_properties: {grid_position: 'PKHITW,TLOEJX'}
     name: outlined_card_3
