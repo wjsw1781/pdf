@@ -1,0 +1,28 @@
+components:
+- components:
+  - components:
+    - name: repeating_panel_1
+      properties: {item_template: ooo.RowTemplate8}
+      type: RepeatingPanel
+    layout_properties: {grid_position: 'TGHSPV,WGNQRG'}
+    name: data_grid_1
+    properties:
+      columns:
+      - {data_key: server_path, id: MVRRZQ, title: server_path}
+      - {data_key: file_name, id: JHXFSV, title: file_name}
+      - {data_key: status, id: RFQWTM, title: status}
+      - {data_key: tags, id: BOTBLP, title: tags}
+      - {data_key: user, id: WNSYHP, title: user}
+    type: DataGrid
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true
