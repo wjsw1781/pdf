@@ -33,4 +33,7 @@ class nav(navTemplate):
     def link_4_click(self, **event_args):
         """This method is called when the link is clicked"""
         open_form('MediaPlayerForm')
+    def testpy_click(self, **event_args):
+        """This method is called when the link is clicked"""
+        open_form('ooo')
 
