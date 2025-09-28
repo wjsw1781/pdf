@@ -14,6 +14,7 @@ class a_jianlixiugai(a_jianlixiugaiTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
+        self.repeating_panel_1.items = app_tables.binary_file_up_down.search(user=anvil.users.get_user())
 
     def file_loader_1_change(self, file, **event_args):
         """This method is called when a new file is loaded into this FileLoader"""
