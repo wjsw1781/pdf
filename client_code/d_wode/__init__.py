@@ -11,9 +11,12 @@ class d_wode(d_wodeTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings.
         self.init_components(**properties)
+        self.repeating_panel_1.items = app_tables.handle_pdf.search(user=anvil.users.get_user())
 
         # Any code you write here will run before the form opens.
 
         while anvil.users.get_user() is None:
             anvil.users.login_with_form(allow_cancel=True)
+
+
         
