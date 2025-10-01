@@ -19,12 +19,18 @@ nohup anvil-app-server --app . --ip 0.0.0.0 --port 9191 --auto-migrate  2>&1 &
 
 <!-- 远程服务器这 4 个指令必不可少 别太自信 这个是可以论证跑通的下次直接用看看效果 -->
 
-iptables -t nat -A PREROUTING -p tcp --dport 59191 -j DNAT --to-destination 10.92.4.254:9191
-iptables -t nat -A POSTROUTING -p tcp -d 10.92.4.254 --dport 9191 -j MASQUERADE
+iptables -t nat -D PREROUTING -p tcp --dport 59191 -j DNAT --to-destination 10.92.2.254:59191
+iptables -t nat -D POSTROUTING -p tcp -d 10.92.2.254 -j MASQUERADE
+
+iptables -t nat -A PREROUTING -p tcp --dport 59191 -j DNAT --to-destination 10.92.2.254:59191
+iptables -t nat -A POSTROUTING -p tcp -d 10.92.2.254 -j MASQUERADE
+
+iptables -t mangle -D FORWARD -o 10_+ -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+iptables -t mangle -D FORWARD -i 10_+ -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+
 
 iptables -t mangle -A FORWARD -o 10_+ -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 iptables -t mangle -A FORWARD -i 10_+ -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
-
 
 
 192.168.171.71:9191
